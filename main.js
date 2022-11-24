@@ -1,85 +1,86 @@
-let cnv = document.getElementById("myCanvas");
-const canvas = document.querySelector("myCanvas");
-let ctx = cnv.getContext("2d");
+// Background
+var backgroundImage = new Image();
+backgroundImage.src =
+  "https://media.istockphoto.com/id/1090359792/vector/brown-wood-texture-background.jpg?b=1&s=612x612&w=0&k=20&c=3U_n9uIqrO_d12qrVAA9kkXynlHeaofQqJiXSgAeKns=";
 
+const canvas = document.querySelector("#canvas");
+const context = canvas.getContext("2d");
 const coords = document.querySelector(".display-coords");
 
-// Background
-let background = document.getElementById("wood");
-ctx.drawImage(background, 0, 0, 750, 750);
-
-// Trsanparency
-ctx.globalAlpha = 0.6;
-
-// Lines
-ctx.lineWidth = 5;
-ctx.stokeStyle = "gray";
-ctx.beginPath();
-ctx.moveTo(250, 10);
-ctx.lineTo(250, 740);
-ctx.stroke();
-
-ctx.lineWidth = 5;
-ctx.stokeStyle = "gray";
-ctx.beginPath();
-ctx.moveTo(500, 10);
-ctx.lineTo(500, 740);
-ctx.stroke();
-
-ctx.lineWidth = 5;
-ctx.stokeStyle = "gray";
-ctx.beginPath();
-ctx.moveTo(10, 250);
-ctx.lineTo(740, 250);
-ctx.stroke();
-
-ctx.lineWidth = 5;
-ctx.stokeStyle = "gray";
-ctx.beginPath();
-ctx.moveTo(10, 500);
-ctx.lineTo(740, 500);
-ctx.stroke();
-
-// End Cap Semi Circles
-ctx.beginPath();
-ctx.ellipse(250, 10, 0.3, 4, Math.PI, 0, Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.ellipse(500, 10, 0.3, 4, Math.PI, 0, Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.ellipse(250, 740, 0.3, 4, Math.PI * 2, 0, Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.ellipse(500, 740, 0.3, 4, Math.PI * 2, 0, Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.ellipse(10, 250, 0.3, 4, Math.PI * 0.5, 0, Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.ellipse(10, 500, 0.3, 4, Math.PI * 0.5, 0, Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.ellipse(740, 250, 0.3, 4, Math.PI * 1.5, 0, Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.ellipse(740, 500, 0.3, 4, Math.PI * 1.5, 0, Math.PI);
-ctx.stroke();
-
-// Event Listener to get coords
 const getCoords = (event) => {
   const container = canvas.getBoundingClientRect();
   const x = event.clientX - container.left - container.width / 2;
   const y = event.clientY - container.top - container.height / 2;
 
-  coords.textContent = `${x}, ${y}`;
+  coords.textContent = `${x}, ${y.toFixed(0)}`;
 };
 
 canvas.addEventListener("click", getCoords);
+
+// Background
+context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+
+// Trsanparency
+context.globalAlpha = 0.6;
+
+// Lines
+context.lineWidth = 5;
+context.stokeStyle = "gray";
+context.beginPath();
+context.moveTo(250, 10);
+context.lineTo(250, 740);
+context.stroke();
+
+context.lineWidth = 5;
+context.stokeStyle = "gray";
+context.beginPath();
+context.moveTo(500, 10);
+context.lineTo(500, 740);
+context.stroke();
+
+context.lineWidth = 5;
+context.stokeStyle = "gray";
+context.beginPath();
+context.moveTo(10, 250);
+context.lineTo(740, 250);
+context.stroke();
+
+context.lineWidth = 5;
+context.stokeStyle = "gray";
+context.beginPath();
+context.moveTo(10, 500);
+context.lineTo(740, 500);
+context.stroke();
+
+//End Cap Semi Circles
+context.beginPath();
+context.ellipse(250, 10, 0.3, 4, Math.PI, 0, Math.PI);
+context.stroke();
+
+context.beginPath();
+context.ellipse(500, 10, 0.3, 4, Math.PI, 0, Math.PI);
+context.stroke();
+
+context.beginPath();
+context.ellipse(250, 740, 0.3, 4, Math.PI * 2, 0, Math.PI);
+context.stroke();
+
+context.beginPath();
+context.ellipse(500, 740, 0.3, 4, Math.PI * 2, 0, Math.PI);
+context.stroke();
+
+context.beginPath();
+context.ellipse(10, 250, 0.3, 4, Math.PI * 0.5, 0, Math.PI);
+context.stroke();
+
+context.beginPath();
+context.ellipse(10, 500, 0.3, 4, Math.PI * 0.5, 0, Math.PI);
+context.stroke();
+
+context.beginPath();
+context.ellipse(740, 250, 0.3, 4, Math.PI * 1.5, 0, Math.PI);
+context.stroke();
+
+context.beginPath();
+context.ellipse(740, 500, 0.3, 4, Math.PI * 1.5, 0, Math.PI);
+context.stroke();
