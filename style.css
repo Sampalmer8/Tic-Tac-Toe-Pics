@@ -1,23 +1,23 @@
 body {
-    background-color: brown;
+  background-color: #b8997b;
 }
 
 canvas {
-    display: flex;
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 100px;
+  display: flex;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 #h1 {
-    background-color: rgb(124, 41, 41);
-    width: 350px;
-    margin: auto;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    border-radius: 50px;
+  background-color: #7c6752;
+  width: 350px;
+  margin: auto;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 50px;
 }

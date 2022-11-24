@@ -1,36 +1,24 @@
-// Player Variables / Game function
-let playerTurn = 0;
-let player1 = true;
-let player2 = false;
-
-if (playerTurn === 0) {
-  player1 = true;
-  player2 = false;
-} else {
-  player1 = false;
-  player2 = true;
-}
-
 // Background
-var backgroundImage = new Image();
-backgroundImage.src =
-  "https://media.istockphoto.com/id/1090359792/vector/brown-wood-texture-background.jpg?b=1&s=612x612&w=0&k=20&c=3U_n9uIqrO_d12qrVAA9kkXynlHeaofQqJiXSgAeKns=";
+let backgroundImage = document.getElementById("wood");
 
+// Setup
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
 const coords = document.querySelector(".display-coords");
 
+// Get Coordinates On Click
 const getCoords = (event) => {
   const container = canvas.getBoundingClientRect();
   const x = event.clientX - container.left - container.width / 2;
   const y = event.clientY - container.top - container.height / 2;
 
-  coords.textContent = `${x}, ${y.toFixed(0)}`;
+  coords.textContent = `${x}, ${y.toFixed(1)}`;
 };
 
 canvas.addEventListener("click", getCoords);
 
 // Background
+context.drawImage(backgroundImage, 0, 0);
 context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
 // Trsanparency
@@ -97,3 +85,16 @@ context.stroke();
 context.beginPath();
 context.ellipse(740, 500, 0.3, 4, Math.PI * 1.5, 0, Math.PI);
 context.stroke();
+
+// Player Variables / Game function
+let playerTurn = 0;
+let player1 = true;
+let player2 = false;
+
+if (playerTurn === 0) {
+  player1 = true;
+  player2 = false;
+} else {
+  player1 = false;
+  player2 = true;
+}
