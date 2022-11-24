@@ -1,3 +1,16 @@
+// Player Variables / Game function
+let playerTurn = 0;
+let player1 = true;
+let player2 = false;
+
+if (playerTurn === 0) {
+  player1 = true;
+  player2 = false;
+} else {
+  player1 = false;
+  player2 = true;
+}
+
 // Background
 var backgroundImage = new Image();
 backgroundImage.src =

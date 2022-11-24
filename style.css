@@ -1,3 +1,7 @@
+body {
+    background-color: brown;
+}
+
 canvas {
     display: flex;
     margin: auto;
@@ -7,4 +11,13 @@ canvas {
 
 h1 {
     text-align: center;
+}
+
+#h1 {
+    background-color: rgb(124, 41, 41);
+    width: 350px;
+    margin: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 50px;
 }
