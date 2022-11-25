@@ -1,10 +1,8 @@
-// Background
-let backgroundImage = document.getElementById("wood");
-
 // Setup
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
 const coords = document.querySelector(".display-coords");
+let playerTurn = 0;
 
 // Get Coordinates On Click
 const getCoords = (event) => {
@@ -12,14 +10,30 @@ const getCoords = (event) => {
   const x = event.clientX - container.left - container.width / 2;
   const y = event.clientY - container.top - container.height / 2;
 
-  coords.textContent = `${x}, ${y.toFixed(1)}`;
+  coords.textContent = `${x}, ${y.toFixed(0)}`;
+
+  if (x <= -127 && y <= -154) {
+    console.log("Square 1");
+  } else if (x > -127 && x < 125 && y <= -154) {
+    console.log("Square 2");
+  } else if (x >= 125 && y <= -154) {
+    console.log("Square 3");
+  } else if (x <= -127 && y > -154 && y < 97) {
+    console.log("Square 4");
+  } else if (x > -127 && x < 125 && y >= -154 && y < 97) {
+    console.log("Square 5 / Middle");
+  } else if (x >= 125 && y > -154 && y < 97) {
+    console.log("Square 6");
+  } else if (x <= -127 && y >= 97) {
+    console.log("Square 7");
+  } else if (x > -127 && x < 125 && y > 97) {
+    console.log("Square 8");
+  } else {
+    console.log("Square 9");
+  }
 };
 
 canvas.addEventListener("click", getCoords);
-
-// Background
-context.drawImage(backgroundImage, 0, 0);
-context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
 // Trsanparency
 context.globalAlpha = 0.6;
@@ -85,16 +99,3 @@ context.stroke();
 context.beginPath();
 context.ellipse(740, 500, 0.3, 4, Math.PI * 1.5, 0, Math.PI);
 context.stroke();
-
-// Player Variables / Game function
-let playerTurn = 0;
-let player1 = true;
-let player2 = false;
-
-if (playerTurn === 0) {
-  player1 = true;
-  player2 = false;
-} else {
-  player1 = false;
-  player2 = true;
-}
