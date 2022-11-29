@@ -12,9 +12,25 @@ let square6 = 0;
 let square7 = 0;
 let square8 = 0;
 let square9 = 0;
+let oScore = 0;
+let xScore = 0;
+var audio = new Audio("sounds/click.mp3");
 
 // Restart
-document.getElementById("restart").addEventListener("click", resetCanvas);
+document.getElementById("restart").addEventListener("click", hhhhhhh);
+
+function hhhhhhh() {
+  xScore = 0;
+  oScore = 0;
+  resetCanvas();
+  if (xScore === 0) {
+    document.getElementById("xScore").innerHTML = "--";
+  }
+
+  if (oScore === 0) {
+    document.getElementById("oScore").innerHTML = "--";
+  }
+}
 
 function resetCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -99,6 +115,10 @@ const getCoords = (event) => {
   const x = event.clientX - container.left - container.width / 2;
   const y = event.clientY - container.top - container.height / 2;
 
+  if (x >= -375 && x <= 375 && y >= -450 && y <= 450) {
+    audio.play();
+  }
+
   if (x <= -127 && y <= -154) {
     console.log("Square 1");
     if (square1 === 0) {
@@ -109,7 +129,7 @@ const getCoords = (event) => {
         context.moveTo(20, 20);
         context.lineTo(230, 230);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -140,7 +160,7 @@ const getCoords = (event) => {
         context.moveTo(270, 20);
         context.lineTo(480, 230);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -171,7 +191,7 @@ const getCoords = (event) => {
         context.moveTo(520, 20);
         context.lineTo(730, 230);
         context.stroke();
-        
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -202,7 +222,7 @@ const getCoords = (event) => {
         context.moveTo(20, 270);
         context.lineTo(230, 480);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -233,7 +253,7 @@ const getCoords = (event) => {
         context.moveTo(270, 270);
         context.lineTo(480, 480);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -264,7 +284,7 @@ const getCoords = (event) => {
         context.moveTo(520, 270);
         context.lineTo(730, 480);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -295,7 +315,7 @@ const getCoords = (event) => {
         context.moveTo(20, 520);
         context.lineTo(230, 730);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -326,7 +346,7 @@ const getCoords = (event) => {
         context.moveTo(270, 520);
         context.lineTo(480, 730);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -357,7 +377,7 @@ const getCoords = (event) => {
         context.moveTo(520, 520);
         context.lineTo(730, 730);
         context.stroke();
-  
+
         context.lineWidth = 10;
         context.stokeStyle = "gray";
         context.beginPath();
@@ -388,6 +408,8 @@ const getCoords = (event) => {
     context.lineTo(670, 125);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (square4 === 1 && square5 === 1 && square6 === 1) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -396,6 +418,8 @@ const getCoords = (event) => {
     context.lineTo(670, 375);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (square7 === 1 && square8 === 1 && square9 === 1) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -404,6 +428,8 @@ const getCoords = (event) => {
     context.lineTo(670, 625);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (square1 === 1 && square4 === 1 && square7 === 1) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -412,6 +438,8 @@ const getCoords = (event) => {
     context.lineTo(125, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (square2 === 1 && square5 === 1 && square8 === 1) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -420,6 +448,8 @@ const getCoords = (event) => {
     context.lineTo(375, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (square3 === 1 && square6 === 1 && square9 === 1) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -428,6 +458,8 @@ const getCoords = (event) => {
     context.lineTo(625, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (square1 === 1 && square5 === 1 && square9 === 1) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -436,6 +468,8 @@ const getCoords = (event) => {
     context.lineTo(670, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (square3 === 1 && square5 === 1 && square7 === 1) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -444,6 +478,8 @@ const getCoords = (event) => {
     context.lineTo(80, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    xScore++;
+    document.getElementById("xScore").innerHTML = xScore;
   } else if (playerTurn === 9) {
     setTimeout(resetCanvas, 5000);
   }
@@ -456,6 +492,8 @@ const getCoords = (event) => {
     context.lineTo(670, 125);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (square4 === 2 && square5 === 2 && square6 === 2) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -464,6 +502,8 @@ const getCoords = (event) => {
     context.lineTo(670, 375);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (square7 === 2 && square8 === 2 && square9 === 2) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -472,6 +512,8 @@ const getCoords = (event) => {
     context.lineTo(670, 625);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (square1 === 2 && square4 === 2 && square7 === 2) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -480,6 +522,8 @@ const getCoords = (event) => {
     context.lineTo(125, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (square2 === 2 && square5 === 2 && square8 === 2) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -488,6 +532,8 @@ const getCoords = (event) => {
     context.lineTo(375, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (square3 === 2 && square6 === 2 && square9 === 2) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -496,6 +542,8 @@ const getCoords = (event) => {
     context.lineTo(625, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (square1 === 2 && square5 === 2 && square9 === 2) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -504,6 +552,8 @@ const getCoords = (event) => {
     context.lineTo(670, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (square3 === 2 && square5 === 2 && square7 === 2) {
     context.lineWidth = 5;
     context.stokeStyle = "gray";
@@ -512,10 +562,12 @@ const getCoords = (event) => {
     context.lineTo(80, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
+    oScore++;
+    document.getElementById("oScore").innerHTML = oScore;
   } else if (playerTurn === 9) {
     setTimeout(resetCanvas, 5000);
   }
-}
+};
 canvas.addEventListener("click", getCoords);
 
 // Trsanparency

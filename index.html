@@ -3,6 +3,10 @@
   <head>
     <link rel="stylesheet" href="style.css" />
     <script defer src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c82a5ee139.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -11,7 +15,13 @@
     </div>
 
     <div id="button">
-      <button id="restart">Restart</button>
+      <h1>
+        <span><i class="fa-solid fa-x"></i></span> Wins:
+        <span id="xScore">--</span>
+        <button id="restart">Restart Game</button>
+        <span><i class="fa-solid fa-o"></i></span> Wins:
+        <span id="oScore">--</span>
+      </h1>
     </div>
 
     <canvas id="canvas" height="750" width="750"></canvas>
