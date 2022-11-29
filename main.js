@@ -444,7 +444,9 @@ const getCoords = (event) => {
     context.lineTo(80, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
-  } 
+  } else if (playerTurn === 9) {
+    setTimeout(resetCanvas, 5000);
+  }
 
   if (square1 === 2 && square2 === 2 && square3 === 2) {
     context.lineWidth = 5;
@@ -510,7 +512,9 @@ const getCoords = (event) => {
     context.lineTo(80, 670);
     context.stroke();
     setTimeout(resetCanvas, 5000);
-  } 
+  } else if (playerTurn === 9) {
+    setTimeout(resetCanvas, 5000);
+  }
 }
 canvas.addEventListener("click", getCoords);
 
